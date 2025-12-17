@@ -15,7 +15,7 @@ jobs:
       - name: Build Flutter + native C++ debug APK
         run: |
           docker run --rm \
-            -v "$PWD/demo":/app \
+            -v "$PWD":/app \
             -w /app \
             instrumentisto/flutter \
             flutter build apk --debug
@@ -24,4 +24,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: demo-debug-apk
-          path: demo/build/app/outputs/flutter-apk/app-debug.apk
+          path: build/app/outputs/flutter-apk/app-debug.apk
